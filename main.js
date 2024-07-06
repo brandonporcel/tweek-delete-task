@@ -7,7 +7,9 @@ document.addEventListener("click", async (e) => {
     if (!selectedTask) return;
 
     try {
-      const deleteButton = await waitForElement(".Task_action__uspJX");
+      const deleteButton = await waitForElement(
+        ".sc-fnfGmV.bDLJKZ div.tooltip"
+      );
       deleteButton.click();
     } catch (error) {
       console.error("Error waiting for delete button:", error);
