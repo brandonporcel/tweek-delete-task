@@ -4,7 +4,7 @@
 
 # 🗑️ Tweek - Delete Task Shortcut
 
-Extensión para Chrome que permite **eliminar tareas en [Tweek](https://tweek.so)** con un simple atajo:  
+Extensión para Chrome que permite **eliminar tareas en [Tweek Calendar](https://tweek.so)** con un simple atajo:  
 Mantén presionada la tecla `Ctrl` y haz clic en una tarea para borrarla automáticamente.
 
 ## 📦 Instalación
