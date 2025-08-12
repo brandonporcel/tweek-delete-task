@@ -1,39 +1,36 @@
 document.addEventListener("click", async (e) => {
-  if (e.ctrlKey) {
-    const taskSelector =
-      'div[aria-describedby="rbd-hidden-text-0-hidden-text-0"]';
-    const selectedTask = e.target.closest(taskSelector);
+  if (!e.ctrlKey) return;
 
-    if (!selectedTask) return;
+  const deleteButtons = document.querySelectorAll("span.tooltip__title");
+  let deleteIcon = null;
 
-    try {
-      const deleteButton = await waitForElement(
-        ".sc-fnfGmV.bDLJKZ div.tooltip"
-      );
-      deleteButton.click();
-    } catch (error) {
-      console.error("Error waiting for delete button:", error);
+  deleteButtons.forEach((el) => {
+    if (el.textContent.trim().includes("Delete")) {
+      deleteIcon = el;
     }
+  });
+
+  if (!deleteIcon) {
+    console.warn("No se encontró el botón de borrar");
+    return;
+  }
+
+  deleteIcon.click();
+
+  // Delay para que aparezca el modal (si es que aparece)
+  await delay(500);
+
+  const confirmBtn = document.querySelector(
+    "._root_w81oo_1._colorDanger_w81oo_44"
+  );
+  if (confirmBtn) {
+    confirmBtn.click();
+    console.log("Tarea eliminada ✅");
+  } else {
+    console.warn("No se encontró el botón de confirmación");
   }
 });
 
-function waitForElement(selector, timeout = 5000) {
-  return new Promise((resolve, reject) => {
-    const startTime = Date.now();
-
-    function checkElement() {
-      const element = document.querySelector(selector);
-      if (element) {
-        resolve(element);
-      } else if (Date.now() - startTime > timeout) {
-        reject(
-          new Error(`Timeout waiting for element with selector: ${selector}`)
-        );
-      } else {
-        setTimeout(checkElement, 100);
-      }
-    }
-
-    checkElement();
-  });
+function delay(ms) {
+  return new Promise((res) => setTimeout(res, ms));
 }

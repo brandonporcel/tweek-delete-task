@@ -1,21 +1,18 @@
 {
-    "name": "Tweek - Delete task",
-    "version": "1.0",
-    "manifest_version": 2,
-    "description": "Delete task shortcut",
-    "permissions": [
-        "activeTab"
-      ],
-    "icons":{
-        "32":"icons/icon32.png",
-        "64":"icons/icon64.png",
-        "128":"icons/icon128.png"
-    },
-    "content_scripts": [
-        {
-            "matches": ["*://*.tweek.so/*"],
-            "all_frames": true,
-            "js": ["main.js"]
-        }
-    ]
+  "name": "Tweek - Delete task",
+  "version": "1.0",
+  "manifest_version": 2,
+  "description": "Delete task shortcut",
+  "permissions": ["activeTab"],
+  "icons": {
+    "32": "icons/icon16.png",
+    "128": "icons/icon128.png"
+  },
+  "content_scripts": [
+    {
+      "matches": ["*://*.tweek.so/*"],
+      "all_frames": true,
+      "js": ["main.js"]
+    }
+  ]
 }
