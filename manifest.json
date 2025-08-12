@@ -1,6 +1,6 @@
 {
   "name": "Tweek - Delete task",
-  "version": "1.0",
+  "version": "v1.0.0",
   "manifest_version": 2,
   "description": "Delete task shortcut",
   "permissions": ["activeTab"],
