@@ -9,7 +9,7 @@ Mantén presionada la tecla `Ctrl` y haz clic en una tarea para borrarla automá
 
 ## 📦 Instalación
 
-1. Descarga la última versión desde [Releases](https://github.com/tuusuario/tweek-extension/releases).
+1. Descarga la última versión desde [Releases](https://github.com/brandonporcel/tweek-delete-task/releases).
 2. Descomprime el archivo `.zip`.
 3. Ve a `chrome://extensions` en tu navegador.
 4. Activa **Modo desarrollador**.

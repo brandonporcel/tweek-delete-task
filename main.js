@@ -1,6 +1,11 @@
 document.addEventListener("click", async (e) => {
   if (!e.ctrlKey) return;
 
+  const taskIsOpen = document.querySelector(".dialog.sizeMedium.withPaddings");
+  if (taskIsOpen && taskIsOpen.contains(e.target)) {
+    return;
+  }
+
   const deleteButtons = document.querySelectorAll("span.tooltip__title");
   let deleteIcon = null;
 
